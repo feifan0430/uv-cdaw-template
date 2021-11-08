@@ -1,5 +1,6 @@
 # Auteur(s)
-- <FEI Fan>
+
+FEI Fan
 
 # Jalon 1
 
