@@ -17,4 +17,4 @@ Identifiants admin sur le site :
    - utilisateur 1 : riri / loulou
    - admin/w;efh039
 
-Vidéo de démonstration : https://youtubexxxx
+Vidéo de démonstration : https://youtube
