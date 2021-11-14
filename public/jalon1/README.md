@@ -1,4 +1,4 @@
-# Auteur(s)
+# Auteur
 
 FEI Fan
 
@@ -6,16 +6,6 @@ FEI Fan
 
 <description>
 
-Fonctionnalités implémentées :
-- création de compte
-- connexion au site
-   par manque de temps, nous n'avons pas terminé la connexion
-   il manque : xxx et yyy
-- ...
+Le site de démonstration comporte six pages (page d'accueil, liste des films, détails du film, ma liste, inscription/connexion), qui ont été reliées entre elles en fonction de leurs connexions internes.
 
-Identifiants admin sur le site :
-   - utilisateur 1 : bob / leponge
-   - utilisateur 1 : riri / loulou
-   - admin/w;efh039
-
-Vidéo de démonstration : https://youtubexxxx
+Les visiteurs peuvent accéder à la page des détails de la vidéo via le bouton "View details".
