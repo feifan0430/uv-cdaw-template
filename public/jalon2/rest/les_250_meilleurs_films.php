@@ -12,7 +12,7 @@
     
 <?php
 // Les 250 meilleurs films
-$result = file_get_contents("https://imdb-api.com/en/API/Top250Movies/k_l43l8lra");
+$result = file_get_contents("https://imdb-api.com/fr/API/Top250Movies/k_l43l8lra");
 
 if (!$result) {
     die;
