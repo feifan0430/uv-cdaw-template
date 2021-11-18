@@ -36,3 +36,9 @@ Route::get('listeFilms', function () {
 Route::get('/route_demo01', function () {
     return view('route_demo01');
 });
+
+// Indice3
+Route::get('listeMedias', 'App\Http\controllers\listeMediasController@getListeMedias');
+
+// Indice4
+Route::get('listeMedias/{type}/{annee}', 'App\Http\controllers\listeMediasController@afficherListeMedias');
