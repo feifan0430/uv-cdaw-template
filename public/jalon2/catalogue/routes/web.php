@@ -1,6 +1,9 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\listeCRUDController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +21,9 @@ Route::get('/', function () {
 });
 
 // Exo2_01
-Route::get('/{prenom}/{nom}', function ($prenom, $nom) {
-    echo "Bonjour " . $prenom . " " . $nom . ". ";
-});
+// Route::get('/{prenom}/{nom}', function ($prenom, $nom) {
+//     echo "Bonjour " . $prenom . " " . $nom . ". ";
+// });
 
 // Exo2_02
 Route::get('/{title}', function ($title) {
@@ -38,7 +41,19 @@ Route::get('/route_demo01', function () {
 });
 
 // Indice3
-Route::get('listeMedias', 'App\Http\controllers\listeMediasController@getListeMedias');
+Route::get('listeMedias', 'App\Http\Controllers\listeMediasController@getListeMedias');
 
 // Indice4
-Route::get('listeMedias/{type}/{annee}', 'App\Http\controllers\listeMediasController@afficherListeMedias');
+// Route::get('listeMedias/{type}/{annee}', 'App\Http\controllers\listeMediasController@afficherListeMedias');
+
+// liste_create
+Route::get('listeMedias/update', 'App\Http\Controllers\listeCRUDController@liste_create');
+
+// liste_read
+Route::get('listeMedias/read/{line}', 'App\Http\Controllers\listeCRUDController@liste_read');
+
+// liste_delete
+Route::get('listeMedias/delete/{line}', 'App\Http\Controllers\listeCRUDController@liste_delete');
+
+// liste_update
+Route::get('listeMedias/update/{line}', 'App\Http\Controllers\listeCRUDController@liste_update');
