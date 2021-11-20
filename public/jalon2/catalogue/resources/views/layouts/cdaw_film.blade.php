@@ -1,3 +1,4 @@
+{{-- Laravel Vue --}}
 <!DOCTYPE html>
 <html lang="fr">
 <head>

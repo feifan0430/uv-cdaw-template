@@ -1,3 +1,4 @@
+{{-- Laravel Vue --}}
 @extends('layouts.cdaw_film')
 @section('content')
     <div class="container">

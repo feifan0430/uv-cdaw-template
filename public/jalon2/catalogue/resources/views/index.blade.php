@@ -1,3 +1,4 @@
+{{-- Laravel Vue --}}
 {{-- index --}}
     @extends('layouts.cdaw_film')
     @section('content')
