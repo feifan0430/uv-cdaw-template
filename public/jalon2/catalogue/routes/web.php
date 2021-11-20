@@ -16,6 +16,9 @@ use App\Http\Controllers\listeCRUDController;
 |
 */
 
+// Lavarel Route
+
+// Projet Routes 
 Route::get('/', function () {
     return view('index');
 })->name('index');
