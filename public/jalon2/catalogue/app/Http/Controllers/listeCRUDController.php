@@ -24,7 +24,7 @@ class listeCRUDController extends Controller
         echo "ID: " . $id . "<br/>";
         $request_read = $request_read['0'];
         echo "Name: " . $request_read->name . " Director: " . $request_read->director . "<br/>";
-        return "read success";
+        return "read success.";
     }
 
     public function liste_update (Request $request, $id) {

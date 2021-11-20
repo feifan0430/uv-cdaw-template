@@ -17,8 +17,32 @@ use App\Http\Controllers\listeCRUDController;
 */
 
 Route::get('/', function () {
-    return view('template');
+    return view('index');
+})->name('index');
+
+Route::get('/index', function () {
+    return view('index');
 });
+
+Route::get('/explore', function () {
+    return view('explore');
+})->name('explore');
+
+Route::get('/film1', function () {
+    return view('film1');
+})->name('film1');
+
+Route::get('/signin', function () {
+    return view('signin');
+})->name('signin');
+
+Route::get('/signup', function () {
+    return view('signup');
+})->name('signup');
+
+Route::get('/user', function () {
+    return view('user');
+})->name('user');
 
 // Exo2_01
 // Route::get('/{prenom}/{nom}', function ($prenom, $nom) {

@@ -5,19 +5,16 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="author" content="Fan FEI">
-    <meta name="description" content="UV CDAW Jalon2">
+    <meta name="description" content="UV CDAW Jalon1">
     <!-- jquery -->
-    <script src='{{ asset("scripts/jquery-3.5.1.min.js") }}'></script>
     <script src="../scripts/jquery-3.5.1.min.js"></script>
     <!-- Bootstrap css-->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- JavaScript -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="../js/bootstrap.min.js"></script>
     <!-- Accueil style -->
-    <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
-    <link rel="stylesheet" href="css/carousel.css">
+    <!-- <link rel="stylesheet" href="../css/carousel.css"> -->
+    <!-- <link rel="stylesheet" href="../css/signin.css"> -->
     <title>IDAW Film</title>
 </head>
 <body>
@@ -32,13 +29,13 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="index.html" class="active">Accueil</a>
+                            <a href="{{ route('index') }}" class="active">Accueil</a>
                         </li>
                         <li>
-                            <a href="pages/explore.html">Catagories</a>
+                            <a href="{{ route('explore') }}">Catagories</a>
                         </li>
                         <li>
-                            <a href="pages/user.html">Mon espace</a>
+                            <a href="{{ route('user') }}">Mon espace</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -53,13 +50,13 @@
                                 </li>
                                 <li class="divider"></li>
                                 <li>
-                                    <a href="pages/user.html">Your Profile</a>
+                                    <a href="{{ route('user') }}">Your Profile</a>
                                 </li>
                                 <li>
-                                    <a href="pages/signin.html">Sign in</a>
+                                    <a href="{{ route('signin') }}">Sign in</a>
                                 </li>
                                 <li>
-                                    <a href="pages/signup.html">Sign up</a>
+                                    <a href="{{ route('signup') }}">Sign up</a>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
@@ -72,5 +69,25 @@
             </div>
         </div>
     </div>
+
+    <!-- Sign in -->
+    <div class="container" style="padding-top: 8%;">
+        <div class="col-md-6 col-md-push-3">
+            <form class="form-signin">
+                <h2 class="form-signin-heading">Please sign up</h2>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required style="margin-top: 1%;">
+                <label for="inputPassword" class="sr-only">Repeat Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Repeat Password" required style="margin-top: 1%;">
+                <!-- <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div> -->
+                <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 1%;">Sign up</button>
+            </form>
+        </div>
+    </div>
 </body>
-</html>
