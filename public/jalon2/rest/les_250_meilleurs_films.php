@@ -5,7 +5,7 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="author" content="Fan FEI">
-    <meta name="description" content="IMDB api">
+    <meta name="description" content="IMDB api: les 250 meilleurs films">
     <title>CDAW api demo</title>
 </head>
 <body>
