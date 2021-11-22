@@ -6,7 +6,7 @@ Author: **Fan FEI**
 
 ## The contents
 
-**Attention**: On doit entrer avec *localhost/jalon2/catalogue/public/index.php* 
+**Attention**: On doit entrer avec ***localhost/jalon2/catalogue/public/index.php***
 
 1. Use IMDB's api 
     - rest/les_250_meilleurs_films.php
