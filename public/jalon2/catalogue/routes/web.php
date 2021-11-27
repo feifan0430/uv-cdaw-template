@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\listeCRUDController;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +21,12 @@ use App\Http\Controllers\listeCRUDController;
 
 // Projet Routes 
 Route::get('/', function () {
-    return view('index');
-})->name('index');
+    return view('welcome');
+});//->name('index');
 
 Route::get('/index', function () {
     return view('index');
-});
+})->name('index');
 
 Route::get('/explore', function () {
     return view('explore');
@@ -84,3 +85,10 @@ Route::get('listeMedias/delete/{line}', 'App\Http\Controllers\listeCRUDControlle
 
 // liste_update
 Route::get('listeMedias/update/{line}', 'App\Http\Controllers\listeCRUDController@liste_update');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/register', [RegisteredUserController::class, 'create'])
+    ->middleware(['guest'])
+    ->name('register');
