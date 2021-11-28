@@ -60,8 +60,8 @@
                                 </li>
                             </ul>
                         </li> -->
-                        <li>
-                            @if (Route::has('login'))
+                        
+                            @if (Route::has('login'))<li>
                                 @auth
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     Bonjour, {{ Auth::user()->name }}  
@@ -85,16 +85,19 @@
                                         </form>
                                     </li>
                                 </ul>
-                                    
+                        </li>            
                                     @else
+                                    <li>
                                         <a href="{{ route('login') }}" >Log in</a>
-                                        
-                                        <!-- @if (Route::has('register'))
+                                    </li>    
+                                        @if (Route::has('register'))
+                                        <li>
                                             <a href="{{ route('register') }}" >Register</a>
-                                        @endif -->
+                                        </li>
+                                        @endif
                                     @endauth
                             @endif
-                        </li>
+                        
                     </ul>
                 </div>
             </div>

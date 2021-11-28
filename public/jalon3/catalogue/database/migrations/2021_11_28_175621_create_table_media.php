@@ -16,11 +16,12 @@ class CreateTableMedia extends Migration
         Schema::create('table_media', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("rank")->nullable();
+            $table->string("imdb_id")->nullable();
+            $table->string("imdb_rank")->nullable();
             $table->string("title")->nullable();
             $table->string("year")->nullable();
             $table->string("image")->nullable();
-            $table->string("imdbrating")->nullable();
+            $table->string("imdb_rating")->nullable();
             $table->string("type")->nullable();
             $table->string("duration")->nullable();
             $table->string("director")->nullable();

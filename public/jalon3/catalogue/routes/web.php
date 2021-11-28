@@ -46,3 +46,7 @@ Route::get('/signup', function () {
 Route::get('/user', function () {
     return view('user');
 })->name('user');
+
+Route::get('/createdatabase', function () {
+    return view('createDatabase');
+})->name('createdatabase');
