@@ -10,4 +10,9 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    // public function logout(Request $request) {
+    //     Auth::logout();
+    //     return redirect()->route('index');
+    // }
 }
