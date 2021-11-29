@@ -19,7 +19,10 @@
                                 Affiche1
                             </h1>
                             <p>
-                                TODO: IMDB api
+                                <?php
+                                $result_read = DB::select('select title from table_media where id=1');
+                                echo $result_read['0']->title;
+                                ?>
                             </p>
                             <p>
                                 <a class="btn btn-lg btn-primary" href="#" role="button">
@@ -92,12 +95,23 @@
         </div>
         <div class="row">
             <div class="col-md-2">
-                <img class="img-rounded" src="images/Bienvenu_chez_les_chtis.jpg" alt="Affiche1" width="140" height="210">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p>
-                    TODO: IMDB api
+                <p style="text-align: center;">
+                    <?php
+                        $result_read = DB::select('select * from table_media where id=1');
+                        echo '<img class="img-rounded" src="' . $result_read['0']->image . '" alt="Affiche1" width="140" height="210">'
+                    ?>
+                </p>
+                <h4 style="text-align: center;">
+                    <?php
+                        $result_read = DB::select('select * from table_media where id=1');
+                        echo $result_read['0']->title;
+                    ?>
+                </h4>
+                <p style="text-align: center;">
+                    <?php
+                        $result_read = DB::select('select * from table_media where id=1');
+                        echo $result_read['0']->director;
+                    ?>
                 </p>
                 <p style="text-align: center;">
                     <a class="btn btn-default" href="pages/film1.html" role="button">
