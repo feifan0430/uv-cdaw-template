@@ -2,8 +2,9 @@
 {{-- index --}}
     @extends('layouts_cdaw.cdaw_film')
     @section('content')
+    
     <div class="container">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style=""> 
+        <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -12,61 +13,13 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="first-slide" src="#" alt="First slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>
-                                Affiche1
-                            </h1>
-                            <p>
-                                <?php
-                                $result_read = DB::select('select title from table_media where id=1');
-                                echo $result_read['0']->title;
-                                ?>
-                            </p>
-                            <p>
-                                <a class="btn btn-lg btn-primary" href="#" role="button">
-                                    Suite
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+                    <img class="first-slide" src="https://www.indesignskills.com/wp-content/uploads/2021/10/The-Best-Fonts-for-Movie-Poster-Design.png" alt="First slide">
                 </div>
                 <div class="item">
-                    <img class="second-slide" src="#" alt="Second slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>
-                                Affiche2
-                            </h1>
-                            <p>
-                                TODO: IMDB api
-                            </p>
-                            <p>
-                                <a class="btn btn-lg btn-primary" href="#" role="button">
-                                    Suite
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+                    <img class="second-slide" src="https://www.indesignskills.com/wp-content/uploads/2021/10/The-Best-Fonts-for-Movie-Poster-Design.png" alt="Second slide">
                 </div>
                 <div class="item">
-                    <img class="third-slide" src="#" alt="Third slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>
-                                Affiche3
-                            </h1>
-                            <p>
-                                TODO: IMDB api
-                            </p>
-                            <p>
-                                <a class="btn btn-lg btn-primary" href="#" role="button">
-                                    Suite
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+                    <img class="third-slide" src="https://www.indesignskills.com/wp-content/uploads/2021/10/The-Best-Fonts-for-Movie-Poster-Design.png" alt="Third slide">
                 </div>
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -93,102 +46,65 @@
                 </h2>
             </a>
         </div>
+        <div class="row" style="margin-bottom: 3%;">
+            <?php
+                $recommand_id_media_range = range(1, 60);
+                shuffle($recommand_id_media_range);
+                for ($j = 1; $j <= 6; $j++) {
+                    $i = $recommand_id_media_range[$j]; 
+                    echo '<div class="col-md-2">';
+                        echo '<p style="text-align: center;">';
+                            $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                            echo '<img class="img-rounded" src="' . $result_read['0']->image . '" alt="Affiche1" width="140" height="210">';
+                        echo '</p>';
+                        
+                        echo '<h4 style="text-align: center; height: 50px">';
+                            $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                            echo $result_read['0']->title;
+                        echo '</h4>';
+                
+                        echo '<p style="text-align: center; height: 30px">';
+                            $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                            echo $result_read['0']->director;
+                        echo '</p>';
+                
+                        echo '<p style="text-align: center;">';
+                            echo '<a class="btn btn-default" href="pages/film1.html" role="button">';
+                                echo 'View details';
+                            echo '</a>';
+                        echo '</p>';
+                    echo '</div>';
+                }
+            ?>
+        </div>
         <div class="row">
-            <div class="col-md-2">
-                <p style="text-align: center;">
-                    <?php
-                        $result_read = DB::select('select * from table_media where id=1');
-                        echo '<img class="img-rounded" src="' . $result_read['0']->image . '" alt="Affiche1" width="140" height="210">'
-                    ?>
-                </p>
-                <h4 style="text-align: center;">
-                    <?php
-                        $result_read = DB::select('select * from table_media where id=1');
-                        echo $result_read['0']->title;
-                    ?>
-                </h4>
-                <p style="text-align: center;">
-                    <?php
-                        $result_read = DB::select('select * from table_media where id=1');
-                        echo $result_read['0']->director;
-                    ?>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="pages/film1.html" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="https://imdb-api.com/posters/original/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg" alt="Affiche1" width="140" height="210">
-                <h2 style="text-align: center;">
-                    Affiche2
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="#" alt="Affiche1" width="140" height="210">
-                <h2 style="text-align: center;">
-                    Affiche3
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="#" alt="Affiche1" width="140" height="210">
-                <h2 style="text-align: center;">
-                    Affiche4
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="#" alt="Affiche1" width="150" height="200">
-                <h2 style="text-align: center;">
-                    Affiche5
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="#" alt="Affiche1" width="150" height="200">
-                <h2 style="text-align: center;">
-                    Affiche6
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
+            <?php
+                for ($j = 1; $j <= 6; $j++) {
+                    $i = $recommand_id_media_range[$j + 6]; 
+                    echo '<div class="col-md-2">';
+                        echo '<p style="text-align: center;">';
+                            $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                            echo '<img class="img-rounded" src="' . $result_read['0']->image . '" alt="Affiche1" width="140" height="210">';
+                        echo '</p>';
+                        
+                        echo '<h4 style="text-align: center; height: 50px">';
+                            $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                            echo $result_read['0']->title;
+                        echo '</h4>';
+                
+                        echo '<p style="text-align: center; height: 30px">';
+                            $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                            echo $result_read['0']->director;
+                        echo '</p>';
+                
+                        echo '<p style="text-align: center;">';
+                            echo '<a class="btn btn-default" href="pages/film1.html" role="button">';
+                                echo 'View details';
+                            echo '</a>';
+                        echo '</p>';
+                    echo '</div>';
+                }
+            ?>
         </div>
         <!-- Liste 2 -->
         <hr class="featurette-divider">
@@ -200,93 +116,37 @@
             </a>
         </div>
         <div class="row">
-            <div class="col-md-2">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="150" height="200">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="#" alt="Affiche1" width="150" height="200">
-                <h2 style="text-align: center;">
-                    Affiche2
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="#" alt="Affiche1" width="150" height="200">
-                <h2 style="text-align: center;">
-                    Affiche3
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="#" alt="Affiche1" width="150" height="200">
-                <h2 style="text-align: center;">
-                    Affiche4
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="#" alt="Affiche1" width="150" height="200">
-                <h2 style="text-align: center;">
-                    Affiche5
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-2">
-                <img class="img-rounded" src="#" alt="Affiche1" width="150" height="200">
-                <h2 style="text-align: center;">
-                    Affiche6
-                </h2>
-                <p>
-                    TODO: IMDB api
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
+            <?php
+                for ($j = 1; $j <= 6; $j++) {
+                    $i = $recommand_id_media_range[$j + 12]; 
+                    echo '<div class="col-md-2">';
+                        echo '<p style="text-align: center;">';
+                            $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                            echo '<img class="img-rounded" src="' . $result_read['0']->image . '" alt="Affiche1" width="140" height="210">';
+                        echo '</p>';
+                        
+                        echo '<h4 style="text-align: center; height: 50px">';
+                            $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                            echo $result_read['0']->title;
+                        echo '</h4>';
+                
+                        echo '<p style="text-align: center; height: 30px">';
+                            $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                            echo $result_read['0']->director;
+                        echo '</p>';
+                
+                        echo '<p style="text-align: center;">';
+                            echo '<a class="btn btn-default" href="pages/film1.html" role="button">';
+                                echo 'View details';
+                            echo '</a>';
+                        echo '</p>';
+                    echo '</div>';
+                }
+            ?>
         </div>
-        <!-- Recommande -->
         <hr class="featurette-divider">
+        <!-- Recommande -->
+        <!-- <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">
@@ -301,12 +161,6 @@
                 <img class="featurette-image img-responsive center-block" alt="Affiche api">
             </div>
         </div>
-        <hr class="featurette-divider">
-
-        <!-- FOOTER -->
-        <footer>
-            <p class="pull-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2021 IMT Nord Europe, UV CDAW, Fan FEI &middot; <a href="#">Contactez moi</a> &middot; <a href="https://ceri-num.gitbook.io/uv-cdaw/">CDAW</a></p>
-        </footer>
+        <hr class="featurette-divider"> -->
     </div>
     @endsection

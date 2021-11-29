@@ -16,7 +16,7 @@
     <!-- jquery -->
     <script src='{{ asset("scripts/jquery-3.5.1.min.js") }}'></script>
     <!-- Bootstrap css-->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- JavaScript -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Accueil style -->
@@ -123,5 +123,13 @@
     </div>
     <!--  -->
     @yield('content')
+
+    <!-- FOOTER -->
+    <div class="container marketing">
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2021 IMT Nord Europe, UV CDAW, Fan FEI &middot; <a href="#">Contactez moi</a> &middot; <a href="https://ceri-num.gitbook.io/uv-cdaw/">CDAW</a></p>
+        </footer>
+    </div>
 </body>
 </html>
