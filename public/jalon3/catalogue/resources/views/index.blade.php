@@ -69,7 +69,7 @@
                         echo '</p>';
                 
                         echo '<p style="text-align: center;">';
-                            echo '<a class="btn btn-default" href="pages/film1.html" role="button">';
+                            echo '<a class="btn btn-default" href="film/' . $result_read['0']->imdb_id . '" role="button">';
                                 echo 'View details';
                             echo '</a>';
                         echo '</p>';

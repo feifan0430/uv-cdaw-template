@@ -31,9 +31,9 @@ Route::get('/explore', function () {
     return view('explore');
 })->name('explore');
 
-Route::get('/film1', function () {
-    return view('film1');
-})->name('film1');
+Route::get('/film/{imdb_id}', function ($imdb_id) {
+    return view('film', ['imdb_id' => $imdb_id]);
+})->name('film');
 
 Route::get('/signin', function () {
     return view('login');
