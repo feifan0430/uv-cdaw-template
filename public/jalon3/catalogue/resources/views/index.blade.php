@@ -16,10 +16,10 @@
                     <img class="first-slide" src="https://www.indesignskills.com/wp-content/uploads/2021/10/The-Best-Fonts-for-Movie-Poster-Design.png" alt="First slide">
                 </div>
                 <div class="item">
-                    <img class="second-slide" src="https://www.indesignskills.com/wp-content/uploads/2021/10/The-Best-Fonts-for-Movie-Poster-Design.png" alt="Second slide">
+                    <img class="second-slide" src="https://elements-cover-images-0.imgix.net/ed5ccf2a-aad6-4bec-acc0-d44abbe2530a?auto=compress%2Cformat&fit=max&w=2038&s=45c959a45ccef4fd49b91f9032627330" alt="Second slide">
                 </div>
                 <div class="item">
-                    <img class="third-slide" src="https://www.indesignskills.com/wp-content/uploads/2021/10/The-Best-Fonts-for-Movie-Poster-Design.png" alt="Third slide">
+                    <img class="third-slide" src="https://elements-preview-images-0.imgix.net/89481d51-a662-4a0c-9e48-f3a5c263d298?auto=compress%2Cformat&fit=max&w=2740&s=a4760d50bd968e0ea6ac28775aa57dc2" alt="Third slide">
                 </div>
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
