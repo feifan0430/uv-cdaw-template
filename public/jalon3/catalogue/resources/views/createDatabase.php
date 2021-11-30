@@ -62,7 +62,7 @@ class media {
 //     DB::insert('insert into table_media (imdb_id, imdb_rank, title, year, image, imdb_rating) values (?, ?, ?, ?, ?, ?)', [$temp->imdb_id, $temp->imdb_rank, $temp->title, $temp->year, $temp->image, $temp->imdb_rating]);
 // }
 
-for ($i = 60; $i <= 250; $i++) { 
+for ($i = 101; $i <= 250; $i++) { 
     $request_read = DB::select('select * from table_media where id = ?', [$i]);
     $request_read = $request_read['0'];
     $result = file_get_contents("https://imdb-api.com/en/API/Title/k_l43l8lra/" . $request_read->imdb_id);

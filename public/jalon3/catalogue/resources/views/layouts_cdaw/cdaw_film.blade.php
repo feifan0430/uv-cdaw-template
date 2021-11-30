@@ -16,7 +16,7 @@
     <!-- jquery -->
     <script src='{{ asset("scripts/jquery-3.5.1.min.js") }}'></script>
     <!-- Bootstrap css-->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <!-- JavaScript -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Accueil style -->

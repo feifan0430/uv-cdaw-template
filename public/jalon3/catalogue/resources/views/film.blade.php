@@ -121,6 +121,23 @@
                 </form>
             </div>
         </div>
+
+        <?php
+            $num_commentary = DB::table('table_commentary')->where('author', 'Fan')->count('id');
+            echo $num_commentary;
+            // $result_read = DB::select('select * from table_media where author=Fan');
+            // dd($result_read);
+
+            for ($i = 1; $i <= $num_commentary; $i++) {
+                $result_read = DB::select('select * from table_commentary where id = ?', [$i]); 
+                echo '<div id="user1">';
+                    echo '<h4>' . $result_read['0']->author . '</h4>';
+                    echo '<p id="user1content">' . $result_read['0']->content . '</p>';
+                    echo '<button class="modify">Modify Comment</button>';
+                    echo '<button class="remove">Remove Comment</button>';
+                echo '</div>';
+            }
+        ?>
         <hr class="featurette-divider">
     </div>
     @endsection
