@@ -48,7 +48,7 @@
         </div>
         <div class="row" style="margin-bottom: 3%;">
             <?php
-                $recommand_id_media_range = range(1, 60);
+                $recommand_id_media_range = range(1, 19);
                 shuffle($recommand_id_media_range);
                 for ($j = 1; $j <= 6; $j++) {
                     $i = $recommand_id_media_range[$j]; 

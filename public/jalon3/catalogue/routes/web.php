@@ -1,6 +1,8 @@
 <?php
+namespace app\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\PageFilmController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 // Route::post('logout', [UserController::class, 'logout'])->name('logout');
 
-Route::get('/index', function () {
+Route::any('/index', function () {
     return view('index');
 })->name('index');
 
@@ -50,3 +52,6 @@ Route::get('/user', function () {
 Route::get('/createdatabase', function () {
     return view('createDatabase');
 })->name('createdatabase');
+
+Route::post('/createform', 'PageFilmController@createform')->name('form.create');
+Route::post('/updateform', 'PageFilmController@updateform')->name('form.update');

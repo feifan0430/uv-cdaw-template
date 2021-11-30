@@ -1,5 +1,12 @@
 {{-- Laravel Vue --}}
 <?php
+// location @laravels {
+//         ........................................................
+//         add_header Access-Control-Allow-Origin *;
+//         add_header Access-Control-Allow-Credentials: true;
+// 	    ........................................................
+// }
+
 // namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
@@ -19,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <!-- JavaScript -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/pagefilm.js') }}"></script>
     <!-- Accueil style -->
     <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
     <title>CDAW Film</title>
