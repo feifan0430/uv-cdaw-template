@@ -55,9 +55,13 @@ class PageFilmController extends Controller
     }
 
     public function updateform (Request $request) {
-        print_r($request->t1);
-        print_r("Hello World");
-        // return "Bonjour";
+        // echo $request->update_comment_id;
+        // echo $request->update_comment;
+        // echo $request->update_author;
+        // echo $request->imdb_id;
+        DB::update('update table_commentary set author = ? where id = ?', [$request->update_author, $request->update_comment_id]);
+        DB::update('update table_commentary set content = ? where id = ?', [$request->update_comment, $request->update_comment_id]);
+        return redirect('film/' . $request->update_imdb_id);
     }
 
     public function deleteform(Request $request) {

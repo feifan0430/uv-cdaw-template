@@ -50,7 +50,7 @@ Route::get('/createdatabase', function () {
 })->name('createdatabase');
 
 Route::post('/createform', 'PageFilmController@createform')->name('form.create');
-Route::post('film/updateform', 'PageFilmController@updateform')->name('form.update');
+Route::post('/updateform', 'PageFilmController@updateform')->name('form.update');
 Route::post('film/deleteform', 'PageFilmController@deleteform')->name('form.delete');
 
 // Route::get('/film/{imdb_id}', function ($imdb_id) {

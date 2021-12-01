@@ -116,31 +116,25 @@
 
         <div class="row">
             <div class="col-md-6">
-                <form id="updateform" method="post" action="#" style="visibility: hidden; margin-top: 5%;">
+                <form id="updateform" method="post" action="{{ route('form.update') }}" style="visibility: hidden; margin-top: 5%;">
                     @csrf
                     <div class="form-group">
                         <label form="name">
-                            <!-- <h2>
+                            <h2>
                                 Update the comment: 
-                            </h2> -->
+                            </h2>
                         </label>
                         <input type="text" name="update_imdb_id" value="{{$imdb_id}}" style="visibility: hidden;">
+                        <input type="text" id="update_comment_id" name="update_comment_id" value="" style="visibility: hidden;">
                         <input type="text" name="update_author" value="{{Auth::user()->name}}" style="visibility: hidden;">
                         <textarea class="form-control" rows="5" name="update_comment" placeholder="Update the comment..."></textarea>
-                        <button type="submit" id="updateform_submit" style="margin-top: 2%;" onclick="" disabled="disabled">
+                        <button type="submit" id="updateform_submit" style="margin-top: 2%;" disabled="disabled">
                             confirmer
                         </button>
                     </div>
                 </form>
             </div>
         </div>
-
-        <!-- <form action="#" id="myForm1" name="myForm" style="visibility: hidden; margin-top: 5%;">
-            @csrf
-            <textarea name="newComment" id="newComment" cols="50" rows="10" style="resize: none;" placeholder="..." value=""></textarea>
-            <input type="submit" value="submit" id="myFormSubmit" disabled="disabled">
-        </form>
-        <hr class="featurette-divider"> -->
     </div>
 
     <hr class="featurette-divider">
@@ -153,6 +147,8 @@
             formnoeud.style.visibility = "visible";
             var formsubmitnoeud = document.getElementById("updateform_submit");
             formsubmitnoeud.disabled = false;
+            var form_media_id_noeud = document.getElementById("update_comment_id");
+            form_media_id_noeud.value = comment_id;
             // usernoeud = document.getElementById(e.currentTarget.parentNode.id);
         }
         // alert("Bonjour");
