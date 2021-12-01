@@ -4,68 +4,49 @@
     <div class="container">
         <div class="row" style="padding-bottom: 1%;">
             <h1>
-                <?php
-                $result_read = DB::select('select * from table_media where imdb_id = ?', [$imdb_id]);
-                echo $result_read['0']->title . " (" . $result_read['0']->year . ")";
-                ?>
+                {{$title}} ({{$year}})
             </h1>
         </div>
 
         <div class="row" style="padding-bottom: 2%;">
             <!-- <div class="col-md-1"></div> -->
             <div class="col-md-3">
-                <?php
-                    echo '<img class="img-rounded" src="' . $result_read['0']->image . '" alt="Affiche" width="90%">';
-                ?>
+                <img class="img-rounded" src="{{ $image }}" alt="Affiche" width="90%">';
             </div>
             <div class="col-md-6">
                 <div class="row">
                     <h4>
-                        <?php
-                            echo "Director: " . $result_read['0']->director;
-                        ?>
+                        Director(s): {{$director}}
                     </h4>
                 </div>
                 <div class="row">
                     <h4>
-                        <?php
-                            echo "Writer(s): " . $result_read['0']->writer;
-                        ?>
+                        Writer(s): {{$writer}}
                     </h4>
                 </div>
                 <div class="row">
                     <h4>
-                        <?php
-                            echo "Stars: " . $result_read['0']->stars;
-                        ?>
+                        Stars: {{$stars}}
                     </h4>
                 </div>
                 <div class="row">
                     <h4>
-                        <?php
-                            echo "Country: " . $result_read['0']->country;
-                        ?>
+                        Country: {{$country}}
                     </h4>
                 </div>
                 <div class="row">
                     <h4>
-                        <?php
-                            echo "Type: " . $result_read['0']->type;
-                        ?>
+                        Type: {{$type}}
                     </h4>
                 </div>
                 <div class="row">
                     <h4>
-                        <?php
-                            echo "Duration: " . $result_read['0']->duration;
-                        ?>
+                        Duration: {{$duration}}
                     </h4>
                 </div>
                 <div class="row">
                     <h4>
-                        <?php
-                            echo "IMDB Rating: " . $result_read['0']->imdb_rating;
-                        ?>
+                        IMDB Rating: {{$imdb_rating}}
                     </h4>
                 </div>
             </div>
@@ -77,9 +58,7 @@
                 </div>
                 <div class="row">
                     <h4>
-                        <?php
-                            echo $result_read['0']->introduction;
-                        ?>
+                        {{$introduction}}
                     </h4>
                 </div>
             </div>
@@ -114,10 +93,8 @@
                                 Commentaire
                             </h2>
                         </label>
-                        <?php
-                            echo '<input type="text" name="imdb_id" value="' . $result_read['0']->imdb_id . '" style="visibility: hidden;">';
-                            // echo '<input type="text" name="author" value="' . Auth::user()->name . '" style="visibility: hidden;">';
-                        ?>
+                        <input type="text" name="imdb_id" value="{{$imdb_id}}" style="visibility: hidden;">
+                        <input type="text" name="author" value="{{Auth::user()->name}}" style="visibility: hidden;">
                         <textarea class="form-control" rows="5" name="createcomment"></textarea>
                         <button type="submit" style="margin-top: 2%;">
                             confirmer
@@ -126,46 +103,15 @@
                 </form>
             </div>
         </div>
-
-        <?php
-            $num_commentary = DB::table('table_commentary')->where('media_id', $result_read['0']->imdb_id)->count('id');
-            // $num_allcommentary = DB::table('table_commentary')->where('media_id', $result_read['0']->imdb_id)->count('id');
-            // echo $num_commentary;
-            // $result_read = DB::select('select * from table_media where author=Fan');
-            // dd($result_read);
-
-            $result_read = DB::select('select * from table_commentary where media_id = ?', [$imdb_id]);
-            // dd($result_read);
-        ?>
-            <!-- for ($i = 0; $i < $num_commentary; $i++) {
-                // $result_read = DB::select('select * from table_commentary where media_id = ?', [$im]); 
-                // echo '<form role="form" method="post" action="\{\{route(\'form.update\')\}\}">';
-                // echo '@csrf';
-                // @csrf;
-                echo '<form>';
-                // @csrf
-                    echo '<csrf-token>';
-                    echo '<div class="row" id="user1" style="margin-top: 5%;">';
-                    echo '<h2>' . $result_read[$i]->author . '</h2>';
-                    echo '<p id="fan' . $i .  '" name="user1content">' . $result_read[$i]->content . '</p>';
-                    echo '<button style="margin-top: 1%; margin-right: 1%" onclick="modify()">Modify Comment</button> ';
-                    echo '<button type="submit" style="margin-top: 1%;">Remove Comment</button>';
-                    echo '</div>';
-                echo '</form>';
-                // echo '</div>'
-            } -->
         
-        @for ($i = 0; $i < 2; $i++)
-            <!-- <form> -->
-            <!-- @csrf -->
-                <div class="row" id="user1" style="margin-top: 5%;">
-                    @csrf
-                    <h2>{{$i}}</h2>
-                    <p>{{$i}}</p>
+        <!-- Comment List -->
+        @for ($i = 0; $i < $num_commentary; $i++)
+                <div class="row" style="margin-top: 5%;">
+                    <h2>{{$commentary_read[$i]->author}}</h2>
+                    <p>{{$commentary_read[$i]->content}}</p>
                     <button style="margin-top: 1%; margin-right: 1%" onclick="modify()">Modify Comment</button>
-                    <button type="submit" style="margin-top: 1%;">Remove Comment</button>
+                    <button type="submit" style="margin-top: 1%;" onclick="delete_comment({{$commentary_read[$i]->id}}, '{{$imdb_id}}')">Remove Comment</button>
                 </div>
-            <!-- </form> -->
         @endfor
         <hr class="featurette-divider">
     </div>

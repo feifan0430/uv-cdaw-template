@@ -25,7 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 // Route::post('logout', [UserController::class, 'logout'])->name('logout');
 
-Route::any('/index', function () {
+Route::get('/index', function () {
     return view('index');
 })->name('index');
 
@@ -51,7 +51,10 @@ Route::get('/createdatabase', function () {
 
 Route::post('/createform', 'PageFilmController@createform')->name('form.create');
 Route::post('film/updateform', 'PageFilmController@updateform')->name('form.update');
+Route::post('film/deleteform', 'PageFilmController@deleteform')->name('form.delete');
 
-Route::get('/film/{imdb_id}', function ($imdb_id) {
-    return view('film', ['imdb_id' => $imdb_id]);
-})->name('film');
+// Route::get('/film/{imdb_id}', function ($imdb_id) {
+//     return view('film', ['imdb_id' => $imdb_id]);
+// })->name('film');
+
+Route::get('film/{imdb_id}', 'PageFilmController@openpage')->name('film');
