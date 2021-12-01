@@ -109,11 +109,53 @@
                 <div class="row" style="margin-top: 5%;">
                     <h2>{{$commentary_read[$i]->author}}</h2>
                     <p>{{$commentary_read[$i]->content}}</p>
-                    <button style="margin-top: 1%; margin-right: 1%" onclick="modify()">Modify Comment</button>
+                    <button style="margin-top: 1%; margin-right: 1%" class="modify" onclick="modifyjs({{$commentary_read[$i]->id}})">Update Comment</button>
                     <button type="submit" style="margin-top: 1%;" onclick="delete_comment({{$commentary_read[$i]->id}}, '{{$imdb_id}}')">Remove Comment</button>
                 </div>
         @endfor
-        <hr class="featurette-divider">
+
+        <div class="row">
+            <div class="col-md-6">
+                <form id="updateform" method="post" action="#" style="visibility: hidden; margin-top: 5%;">
+                    @csrf
+                    <div class="form-group">
+                        <label form="name">
+                            <!-- <h2>
+                                Update the comment: 
+                            </h2> -->
+                        </label>
+                        <input type="text" name="update_imdb_id" value="{{$imdb_id}}" style="visibility: hidden;">
+                        <input type="text" name="update_author" value="{{Auth::user()->name}}" style="visibility: hidden;">
+                        <textarea class="form-control" rows="5" name="update_comment" placeholder="Update the comment..."></textarea>
+                        <button type="submit" id="updateform_submit" style="margin-top: 2%;" onclick="" disabled="disabled">
+                            confirmer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- <form action="#" id="myForm1" name="myForm" style="visibility: hidden; margin-top: 5%;">
+            @csrf
+            <textarea name="newComment" id="newComment" cols="50" rows="10" style="resize: none;" placeholder="..." value=""></textarea>
+            <input type="submit" value="submit" id="myFormSubmit" disabled="disabled">
+        </form>
+        <hr class="featurette-divider"> -->
     </div>
+
+    <hr class="featurette-divider">
     @endsection
     
+    <script>
+        function modifyjs(comment_id) {
+            // alert(comment_id);
+            var formnoeud = document.getElementById("updateform");
+            formnoeud.style.visibility = "visible";
+            var formsubmitnoeud = document.getElementById("updateform_submit");
+            formsubmitnoeud.disabled = false;
+            // usernoeud = document.getElementById(e.currentTarget.parentNode.id);
+        }
+        // alert("Bonjour");
+        // let modifiers = document.getElementsByClassName("modify");
+        // Array.from(modifiers).forEach(m => m.addEventListener("click",modify));
+    </script>

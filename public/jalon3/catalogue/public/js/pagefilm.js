@@ -28,15 +28,16 @@ function delete_comment(comment_id, imdb_id) {
 }  
 
 // Modify Comment
-function modify(e) {
-    var formnoeud = document.getElementById("myForm");
-    formnoeud.style.visibility = "visible";
-    var formsubmitnoeud = document.getElementById("myFormSubmit");
-    formsubmitnoeud.disabled = false;
-    usernoeud = document.getElementById(e.currentTarget.parentNode.id);
-}
+// function modify(e) {
+//     var formnoeud = document.getElementById("myForm");
+//     formnoeud.style.visibility = "visible";
+//     var formsubmitnoeud = document.getElementById("myFormSubmit");
+//     formsubmitnoeud.disabled = false;
+//     usernoeud = document.getElementById(e.currentTarget.parentNode.id);
+// }
 
-
+// let modifiers = document.getElementsByClassName("modify");
+// Array.from(modifiers).forEach(m => m.addEventListener("click",modify))
 
 
 
