@@ -16,11 +16,12 @@ class PageFilmController extends Controller
         DB::insert('insert into table_commentary (media_id, author, content, visibility) values (?, ?, ?, ?)', [$request->imdb_id, $request->author, $request->createcomment, 'true']);
         // $url = "film/" . $request->imdb_id;
         // return view($url);
-        return view('film', ['imdb_id' => $request->imdb_id]);
+        return redirect('film/' . $request->imdb_id); //-> view('film', ['imdb_id' => $request->imdb_id]);
     }
 
     public function updateform (Request $request) {
-        echo "Bonjour.";
-        echo $request->input('t1');
+        print_r($request->t1);
+        print_r("Hello World");
+        // return "Bonjour";
     }
 }

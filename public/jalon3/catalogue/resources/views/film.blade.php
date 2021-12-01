@@ -136,13 +136,15 @@
 
             $result_read = DB::select('select * from table_commentary where media_id = ?', [$imdb_id]);
             // dd($result_read);
-
-            for ($i = 0; $i < $num_commentary; $i++) {
+        ?>
+            <!-- for ($i = 0; $i < $num_commentary; $i++) {
                 // $result_read = DB::select('select * from table_commentary where media_id = ?', [$im]); 
                 // echo '<form role="form" method="post" action="\{\{route(\'form.update\')\}\}">';
                 // echo '@csrf';
                 // @csrf;
                 echo '<form>';
+                // @csrf
+                    echo '<csrf-token>';
                     echo '<div class="row" id="user1" style="margin-top: 5%;">';
                     echo '<h2>' . $result_read[$i]->author . '</h2>';
                     echo '<p id="fan' . $i .  '" name="user1content">' . $result_read[$i]->content . '</p>';
@@ -151,8 +153,20 @@
                     echo '</div>';
                 echo '</form>';
                 // echo '</div>'
-            }
-        ?>
+            } -->
+        
+        @for ($i = 0; $i < 2; $i++)
+            <!-- <form> -->
+            <!-- @csrf -->
+                <div class="row" id="user1" style="margin-top: 5%;">
+                    @csrf
+                    <h2>{{$i}}</h2>
+                    <p>{{$i}}</p>
+                    <button style="margin-top: 1%; margin-right: 1%" onclick="modify()">Modify Comment</button>
+                    <button type="submit" style="margin-top: 1%;">Remove Comment</button>
+                </div>
+            <!-- </form> -->
+        @endfor
         <hr class="featurette-divider">
     </div>
     @endsection

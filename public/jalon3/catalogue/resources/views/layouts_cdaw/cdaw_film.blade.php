@@ -20,6 +20,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="author" content="Fan FEI">
     <meta name="description" content="UV CDAW Jalon2">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <!-- jquery -->
     <script src='{{ asset("scripts/jquery-3.5.1.min.js") }}'></script>
     <!-- Bootstrap css-->

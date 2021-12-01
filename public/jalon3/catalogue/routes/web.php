@@ -33,10 +33,6 @@ Route::get('/explore', function () {
     return view('explore');
 })->name('explore');
 
-Route::get('/film/{imdb_id}', function ($imdb_id) {
-    return view('film', ['imdb_id' => $imdb_id]);
-})->name('film');
-
 Route::get('/signin', function () {
     return view('login');
 })->name('signin');
@@ -54,4 +50,8 @@ Route::get('/createdatabase', function () {
 })->name('createdatabase');
 
 Route::post('/createform', 'PageFilmController@createform')->name('form.create');
-Route::post('/updateform', 'PageFilmController@updateform')->name('form.update');
+Route::post('film/updateform', 'PageFilmController@updateform')->name('form.update');
+
+Route::get('/film/{imdb_id}', function ($imdb_id) {
+    return view('film', ['imdb_id' => $imdb_id]);
+})->name('film');
