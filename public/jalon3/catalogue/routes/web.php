@@ -80,3 +80,17 @@ Route::get('explore/film_explore_year_after2010', 'PageExploreController@after20
 Route::get('explore/film_explore_between2000and2009', 'PageExploreController@between2000and2009')->name('film_explore_year_between2000and2009');
 Route::get('explore/film_explore_between1980and1999', 'PageExploreController@between1980and1999')->name('film_explore_year_between1980and1999');
 Route::get('explore/film_explore_before1980', 'PageExploreController@before1980')->name('film_explore_year_before1980');
+
+// explore director
+Route::get('explore/film_explore_christopher_nolan', 'PageExploreController@christopher_nolan')->name('film_explore_christopher_nolan');
+Route::get('explore/film_explore_coppola', 'PageExploreController@coppola')->name('film_explore_coppola');
+Route::get('explore/film_explore_steven_spielberg', 'PageExploreController@steven_spielberg')->name('film_explore_steven_spielberg');
+Route::get('explore/film_explore_hayao_miyazaki', 'PageExploreController@hayao_miyazaki')->name('film_explore_hayao_miyazaki');
+
+
+// search
+Route::get('searchcontent', 'PageSearchController@searchcontent')->name('searchcontent');
+Route::get('searchdefault', 'PageSearchController@searchdefault')->name('searchdefault');
+Route::get('/search', function () {
+    return view('search');
+})->name('search');

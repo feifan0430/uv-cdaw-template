@@ -102,4 +102,25 @@ class PageExploreController extends Controller
             ->update(['isshowed' => 'false']);
         return redirect('explore');
     }
+
+    // director
+    public function christopher_nolan() {
+        DB::update('update table_media set isshowed = ? where director not like ?', ['false', "%" . "Christopher Nolan" . "%"]);
+        return redirect('explore');
+    }
+
+    public function coppola() {
+        DB::update('update table_media set isshowed = ? where director not like ?', ['false', "%" . "Coppola" . "%"]);
+        return redirect('explore');
+    }
+
+    public function steven_spielberg() {
+        DB::update('update table_media set isshowed = ? where director not like ?', ['false', "%" . "Steven Spielberg" . "%"]);
+        return redirect('explore');
+    }
+
+    public function hayao_miyazaki() {
+        DB::update('update table_media set isshowed = ? where director not like ?', ['false', "%" . "Hayao Miyazaki" . "%"]);
+        return redirect('explore');
+    }
 }

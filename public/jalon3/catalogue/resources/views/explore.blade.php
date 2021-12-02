@@ -113,37 +113,40 @@
                 </a>
             </div>
         </div>
-        <!-- Années -->
+        <!-- Director -->
         <div class="row" style="padding-top: 2%;">
             <div class="col-md-2">
-                <button type="submit" style="width: 120px;">
-                    Années
+                <button style="width: 120px;">
+                    Director
                 </button>
             </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    2021
-                </button>
+            <div class="col-md-2">
+                <a href="{{route('film_explore_christopher_nolan')}}">
+                    <button style="width: 150px;">
+                        Christopher Nolan
+                    </button>
+                </a>
             </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    2020
-                </button>
+            <div class="col-md-2">
+                <a href="{{route('film_explore_coppola')}}">
+                    <button style="width: 150px;">
+                        Coppola
+                    </button>
+                </a>
             </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    2010/19
-                </button>
+            <div class="col-md-2">
+                <a href="{{route('film_explore_steven_spielberg')}}">
+                    <button style="width: 150px;">
+                        Steven Spielberg
+                    </button>
+                </a>
             </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    2000/09
-                </button>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    avant
-                </button>
+            <div class="col-md-2">
+                <a href="{{route('film_explore_hayao_miyazaki')}}">
+                    <button style="width: 150px;">
+                        Hayao Miyazaki
+                    </button>
+                </a>
             </div>
         </div>
         <hr class="featurette-divider">

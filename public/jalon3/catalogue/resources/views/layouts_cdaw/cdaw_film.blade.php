@@ -30,6 +30,7 @@
     <script src="{{ asset('js/pagefilm.js') }}"></script>
     <!-- Accueil style -->
     <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/search.css') }}"> -->
     <title>CDAW Film</title>
 </head>
 <body>
@@ -47,35 +48,16 @@
                             <a href="{{ route('index') }}" class="active">Accueil</a>
                         </li>
                         <li>
-                            <a href="{{ route('explore') }}">Catagories</a>
+                            <a href="{{ route('film_explore_afficher') }}">Catagories</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('searchdefault') }}">Cherche</a>
                         </li>
                         <li>
                             <a href="{{ route('user') }}">Mon espace</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Mon compte  
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Bonjour</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="{{ route('user') }}">Your Profile</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('signin') }}">Sign in</a>
-                                </li>
-                                <li>
-                                    <a href="#">Log out</a>
-                                </li>
-                            </ul>
-                        </li> -->
-                        
                             @if (Route::has('login'))<li>
                                 @auth
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -121,12 +103,16 @@
     <div class="container" style="margin-bottom: 3%;">
         <div class="row">
             <div class="col-md-4 col-md-push-1" style="height: 40px;">
-                <div class="input-group" style="margin-top: 10px;">
-                    <input type="text" class="form-control"placeholder="Que vous voulez..." / >
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-search" style="background-color: gray;">cherche</button>
-                    </span>
-                </div>
+                <form action="{{route('searchcontent')}}">
+                    <div class="input-group" style="margin-top: 10px;">
+                        <input name="search_content" type="text" class="form-control" placeholder="Que vous voulez..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-search" style="background-color: gray;">
+                                cherche
+                            </button>
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
