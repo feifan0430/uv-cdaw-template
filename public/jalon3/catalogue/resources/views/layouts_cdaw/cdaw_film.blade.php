@@ -37,7 +37,7 @@
         <div class="row">
             <div class="navbar navbar-default navbar-inverse" role="navigation" style="padding-right: 2%;">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ route('index') }}">
                         cdawFilm
                     </a>
                 </div>
@@ -118,7 +118,7 @@
             </div>
         </div>
     </div>
-    <div class="container" style="margin-bottom: 2%;">
+    <div class="container" style="margin-bottom: 3%;">
         <div class="row">
             <div class="col-md-4 col-md-push-1" style="height: 40px;">
                 <div class="input-group" style="margin-top: 10px;">

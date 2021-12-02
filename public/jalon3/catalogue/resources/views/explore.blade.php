@@ -3,89 +3,121 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <span class="heading">
-                Films
-            </span>
-        </div>
-        <!-- Classification -->
-        <div class="row" style="padding-top: 1%;">
-            <div class="col-md-2">
-                <button type="submit" style="width: 120px;">
-                    Classification:
-                </button>
+            <div class="col-md-2 col-md-push-2">
+                <a href="{{route('film_explore_effacer')}}">
+                    <button style="width: 150px;">
+                        <b>
+                            Effacer la sélection
+                        </b>
+                    </button>
+                </a>
             </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    cata1
-                </button>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    cata2
-                </button>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    cata3
-                </button>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    cata4
-                </button>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    cata5
-                </button>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    cata6
-                </button>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    cata7
-                </button>
-            </div>
-            <!-- <div class="col-md-1 col-md-push-1">
-                <img src="../images/inde_chtis.jpg" alt="AD" width="200px">
+            <!-- <div class="col-md-2">
+                <a href="{{route('film_explore_afficher')}}">
+                    <button style="width: 120px;">
+                        Afficher toutes les films
+                    </button>
+                </a>
             </div> -->
         </div>
-        <!-- Région -->
+        <!-- Country -->
+        <div class="row" style="margin-top: 2%;">
+            <div class="col-md-2">
+                <button style="width: 120px;">
+                    Country
+                </button>
+            </div>
+            <div class="col-md-1">
+                <a href="{{route('film_explore_france')}}">
+                    <button style="width: 80px;">
+                        France
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a href="{{route('film_explore_usa')}}">
+                    <button style="width: 80px;">
+                        USA
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a href="{{route('film_explore_uk')}}">
+                    <button style="width: 80px;">
+                        UK
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a href="{{route('film_explore_germany')}}">
+                    <button style="width: 80px;">
+                        Germany
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a href="{{route('film_explore_italy')}}">
+                    <button style="width: 80px;">
+                        Italy
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a href="{{route('film_explore_japan')}}">
+                    <button style="width: 80px;">
+                        Japan
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a href="{{route('film_explore_spain')}}">
+                    <button style="width: 80px;">
+                        Spain
+                    </button>
+                </a>
+            </div>
+        </div>
+        <!-- Year -->
         <div class="row" style="padding-top: 2%;">
             <div class="col-md-2">
                 <button type="submit" style="width: 120px;">
-                    Région:
+                    Year
                 </button>
             </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    France
-                </button>
+            <div class="col-md-2">
+                <a href="{{route('film_explore_year_after2010')}}">
+                    <button style="width: 150px;">
+                        After 2010
+                    </button>
+                </a>
             </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    Chine
-                </button>
+            <div class="col-md-2">
+                <a href="{{route('film_explore_year_between2000and2009')}}">
+                    <button style="width: 150px;">
+                        2000-2009
+                    </button>
+                </a>
             </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    Amérique
-                </button>
+            <div class="col-md-2">
+                <a href="{{route('film_explore_year_between1980and1999')}}">
+                    <button style="width: 150px;">
+                        1980-1999
+                    </button>
+                </a>
             </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 80px;">
-                    Autre
-                </button>
+            <div class="col-md-2">
+                <a href="{{route('film_explore_year_before1980')}}">
+                    <button style="width: 150px;">
+                        Before 1980
+                    </button>
+                </a>
             </div>
         </div>
         <!-- Années -->
         <div class="row" style="padding-top: 2%;">
             <div class="col-md-2">
                 <button type="submit" style="width: 120px;">
-                    Années:
+                    Années
                 </button>
             </div>
             <div class="col-md-1">
@@ -114,274 +146,39 @@
                 </button>
             </div>
         </div>
-        <hr>
+        <hr class="featurette-divider">
     </div>
 
     <div class="container">
-        <!-- <label for="input-4" class="control-label">Rate This</label> -->
-        <!-- <input id="input-4" name="input-4" class="rating rating-loading" data-show-clear="false" data-show-caption="true"> -->
-        <!-- <input id="input-id" type="number" class="rating" min=0 max=5 step=0.5 data-size="lg" > -->
-        <div class="row" style="padding-bottom: 3%;">
-            <div class="col-md-3">
+        @for($i = 1; $i <= 90; $i++)
+            @if((DB::select('select * from table_media where id = ?', [$i]))['0']->isshowed == "true")
+            <div class="col-md-2" style="margin-bottom: 1%;">
                 <p style="text-align: center;">
-                    <img class="img-rounded" src="../images/Bienvenu_chez_les_chtis.jpg" alt="Affiche1" width="180" height="240">
+                    <?php
+                    $result_read = DB::select('select * from table_media where id = ?', [$i]);
+                    ?>
+                    <img class="img-rounded" src="{{$result_read['0']->image}}" alt="Affiche1" width="140" height="210">
                 </p>
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
+                
+                <h4 style="text-align: center; height: 50px">
+                        <!-- $result_read = DB::select('select * from table_media where id = ?', [$i]); -->
+                    {{$result_read['0']->title}}
+                </h4>
+                
+                <p style="text-align: center; height: 30px">
+                        <!-- $result_read = DB::select('select * from table_media where id = ?', [$i]); -->
+                    {{$result_read['0']->director}}
                 </p>
+                
                 <p style="text-align: center;">
-                    <a class="btn btn-default" href="film1.html" role="button">
+                    <a class="btn btn-default" href="film/{{(DB::select('select * from table_media where id = ?', [$i]))['0']->imdb_id}}" role="button">
                         View details
                     </a>
                 </p>
             </div>
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-        </div>
-
-        <div class="row" style="padding-bottom: 3%;">
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-        </div>
-
-        <div class="row" style="padding-bottom: 3%;">
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-            <div class="col-md-3">
-                <img class="img-rounded" src="images/inde_chtis.jpg" alt="Affiche1" width="180" height="240">
-                <h2 style="text-align: center;">
-                    Affiche1
-                </h2>
-                <p style="text-align: center;">
-                    TODO: IMDB api
-                    <br>
-                    User Rating
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </p>
-                <p style="text-align: center;">
-                    <a class="btn btn-default" href="#" role="button">
-                        View details
-                    </a>
-                </p>
-            </div>
-        </div>
+            @endif
+        @endfor
     </div>
+    <hr class="featurette-divider">
+
 @endsection

@@ -65,21 +65,33 @@
         </div>
 
         <div class="row">
-            <div class="col-md-1">
-                <button type="submit" style="width: 100%;">
-                    Suivi
-                </button>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" style="width: 100%;">
-                    Like
-                </button>
+            <div class="col-md-2">
+                <a href="filmlike/{{$imdb_id}}">
+                    <button type="submit" style="width: 100%;">
+                        @if($is_liked == 'true')
+                        Déjà mon favori
+                        @elseif($is_liked == 'false')
+                        Ajouter à mes favoris
+                        @endif
+                    </button>
+                </a>
             </div>
             <div class="col-md-2">
+                <a href="filmwatch/{{$imdb_id}}">
+                    <button type="submit" style="width: 100%;">
+                        @if($is_watched == 'true')
+                        Déjà vu
+                        @elseif($is_watched == 'false')
+                        Pas vu
+                        @endif
+                    </button>
+                </a>
+            </div>
+            <!-- <div class="col-md-2">
                 <button type="submit" style="width: 100%;">
                     Add to Watchlist
                 </button>
-            </div>
+            </div> -->
         </div>
         <hr style="padding-bottom: 1%;">
 
@@ -142,16 +154,11 @@
     
     <script>
         function modifyjs(comment_id) {
-            // alert(comment_id);
             var formnoeud = document.getElementById("updateform");
             formnoeud.style.visibility = "visible";
             var formsubmitnoeud = document.getElementById("updateform_submit");
             formsubmitnoeud.disabled = false;
             var form_media_id_noeud = document.getElementById("update_comment_id");
             form_media_id_noeud.value = comment_id;
-            // usernoeud = document.getElementById(e.currentTarget.parentNode.id);
         }
-        // alert("Bonjour");
-        // let modifiers = document.getElementsByClassName("modify");
-        // Array.from(modifiers).forEach(m => m.addEventListener("click",modify));
     </script>

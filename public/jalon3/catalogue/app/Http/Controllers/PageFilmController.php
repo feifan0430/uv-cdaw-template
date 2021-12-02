@@ -21,6 +21,9 @@ class PageFilmController extends Controller
         $duration = $result_read['0']->duration;
         $imdb_rating = $result_read['0']->imdb_rating;
         $introduction = $result_read['0']->introduction;
+        $is_liked = $result_read['0']->isliked;
+        $is_watched = $result_read['0']->iswatched;
+        $is_showed = $result_read['0']->isshowed;
 
         $num_commentary = DB::table('table_commentary')->where('media_id', $request->imdb_id)->count('id');
         $commentary_read = DB::select('select * from table_commentary where media_id = ?', [$request->imdb_id]);
@@ -39,7 +42,10 @@ class PageFilmController extends Controller
                     ->with('imdb_rating', $imdb_rating)
                     ->with('introduction', $introduction)
                     ->with('num_commentary', $num_commentary)
-                    ->with('commentary_read', $commentary_read);
+                    ->with('commentary_read', $commentary_read)
+                    ->with('is_liked', $is_liked)
+                    ->with('is_watched', $is_watched)
+                    ->with('is_showed', $is_showed);
     }
 
     public function createform (Request $request) {
@@ -69,5 +75,27 @@ class PageFilmController extends Controller
         // print_r($request->imdb_id);
         DB::delete('delete from table_commentary where id = ?', [$request->comment_id]);
         // return redirect('film/' . $request->imdb_id);
+    }
+
+    public function updatelike(Request $request) {
+        // echo $request->imdb_id;
+        $result_read = DB::select('select * from table_media where imdb_id = ?', [$request->imdb_id]);
+        if($result_read['0']->isliked == 'false') {
+            DB::update('update table_media set isliked = ? where imdb_id = ?', ['true', $request->imdb_id]);
+        }else {
+            DB::update('update table_media set isliked = ? where imdb_id = ?', ['false', $request->imdb_id]);
+        }
+        return redirect('film/' . $request->imdb_id);
+    }
+
+    public function updatewatch(Request $request) {
+        // echo $request->imdb_id;
+        $result_read = DB::select('select * from table_media where imdb_id = ?', [$request->imdb_id]);
+        if($result_read['0']->iswatched == 'false') {
+            DB::update('update table_media set iswatched = ? where imdb_id = ?', ['true', $request->imdb_id]);
+        }else {
+            DB::update('update table_media set iswatched = ? where imdb_id = ?', ['false', $request->imdb_id]);
+        }
+        return redirect('film/' . $request->imdb_id);
     }
 }

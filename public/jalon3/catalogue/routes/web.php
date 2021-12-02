@@ -58,3 +58,25 @@ Route::post('film/deleteform', 'PageFilmController@deleteform')->name('form.dele
 // })->name('film');
 
 Route::get('film/{imdb_id}', 'PageFilmController@openpage')->name('film');
+
+Route::get('film/filmlike/{imdb_id}', 'PageFilmController@updatelike')->name('film.like');
+Route::get('film/filmwatch/{imdb_id}', 'PageFilmController@updatewatch')->name('film.watch');
+
+// explore
+Route::get('explore/film_explore_effacer', 'PageExploreController@effacer')->name('film_explore_effacer');
+Route::get('explore/film_explore_afficher', 'PageExploreController@afficher')->name('film_explore_afficher');
+
+// explore country
+Route::get('explore/film_explore_france', 'PageExploreController@france')->name('film_explore_france');
+Route::get('explore/film_explore_usa', 'PageExploreController@usa')->name('film_explore_usa');
+Route::get('explore/film_explore_uk', 'PageExploreController@uk')->name('film_explore_uk');
+Route::get('explore/film_explore_germany', 'PageExploreController@germany')->name('film_explore_germany');
+Route::get('explore/film_explore_italy', 'PageExploreController@italy')->name('film_explore_italy');
+Route::get('explore/film_explore_japan', 'PageExploreController@japan')->name('film_explore_japan');
+Route::get('explore/film_explore_spain', 'PageExploreController@spain')->name('film_explore_spain');
+
+// explore year
+Route::get('explore/film_explore_year_after2010', 'PageExploreController@after2010')->name('film_explore_year_after2010');
+Route::get('explore/film_explore_between2000and2009', 'PageExploreController@between2000and2009')->name('film_explore_year_between2000and2009');
+Route::get('explore/film_explore_between1980and1999', 'PageExploreController@between1980and1999')->name('film_explore_year_between1980and1999');
+Route::get('explore/film_explore_before1980', 'PageExploreController@before1980')->name('film_explore_year_before1980');
