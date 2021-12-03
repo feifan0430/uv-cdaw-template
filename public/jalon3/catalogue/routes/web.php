@@ -94,3 +94,7 @@ Route::get('searchdefault', 'PageSearchController@searchdefault')->name('searchd
 Route::get('/search', function () {
     return view('search');
 })->name('search');
+
+// avatar
+Route::get('/useravatar', 'UserController@useravatar')->name('useravatar');
+Route::post('/useravatar', 'UserController@update_avatar')->name('update_avatar');

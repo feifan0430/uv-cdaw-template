@@ -71,6 +71,11 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="{{ route('useravatar') }}">
+                                            {{ __('Avatar') }}
+                                        </a>
+                                    </li>
+                                    <li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
 
