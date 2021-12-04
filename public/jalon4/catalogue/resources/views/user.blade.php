@@ -1,4 +1,4 @@
-@extends('layouts_cdaw.cdaw_film')
+@extends('layouts.cdaw_film')
 @section('content')
     <div class="container">
         <div class="row">
@@ -15,8 +15,7 @@
             <div class="jumbotron">
                 <h1>Explorez votre liste</h1>
             </div>
-            <div class="row"> -->
-                
+            <div class="row">
             </div>
         </div>
     </div>
