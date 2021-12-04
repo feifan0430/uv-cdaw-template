@@ -45,6 +45,7 @@ Route::post('film/deleteform', 'PageFilmController@deleteform')->name('form.dele
 
 // page film
 Route::get('film/{imdb_id}', 'PageFilmController@openpage')->name('film');
+Route::post('film/film_like', 'PageFilmController@like_film')->name('film_like');
 
 // explore
 Route::get('explore/film_explore_effacer', 'PageExploreController@effacer')->name('film_explore_effacer');
@@ -82,3 +83,10 @@ Route::get('/search', function () {
 // avatar
 Route::get('/useravatar', 'UserController@useravatar')->name('useravatar');
 Route::post('/useravatar', 'UserController@update_avatar')->name('update_avatar');
+
+// admin 
+Route::get('/admin_dashboard', function () {
+    return view('admin_dashboard');
+})->name('admin_dashboard');
+Route::post('admin_dashboard/ban_user', 'PageAdminController@ban_user');
+Route::post('admin_dashboard/unblock_user', 'PageAdminController@unblock_user');

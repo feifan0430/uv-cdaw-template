@@ -45,7 +45,7 @@ class PageFilmController extends Controller
     }
 
     public function createform(Request $request) {
-        DB::insert('insert into comments (id_media, id_user, content, visibility) values (?, ?, ?, ?)', [$request->imdb_id, $request->id_user, $request->createcomment, 'true']);
+        DB::insert('insert into comments (id_media, id_user, content, visibility, author) values (?, ?, ?, ?, ?)', [$request->imdb_id, $request->id_user, $request->createcomment, 'true', $request->name_user]);
         return redirect('film/' . $request->imdb_id);
     }
 
@@ -59,23 +59,7 @@ class PageFilmController extends Controller
         DB::delete('delete from comments where id = ?', [$request->comment_id]);
     }
 
-    public function updatelike(Request $request) {
-        $result_read = DB::select('select * from medias where imdb_id = ?', [$request->imdb_id]);
-        if($result_read['0']->isliked == 'false') {
-            DB::update('update medias set isliked = ? where imdb_id = ?', ['true', $request->imdb_id]);
-        }else {
-            DB::update('update medias set isliked = ? where imdb_id = ?', ['false', $request->imdb_id]);
-        }
-        return redirect('film/' . $request->imdb_id);
-    }
-
-    public function updatewatch(Request $request) {
-        $result_read = DB::select('select * from medias where imdb_id = ?', [$request->imdb_id]);
-        if($result_read['0']->iswatched == 'false') {
-            DB::update('update medias set iswatched = ? where imdb_id = ?', ['true', $request->imdb_id]);
-        }else {
-            DB::update('update medias set iswatched = ? where imdb_id = ?', ['false', $request->imdb_id]);
-        }
-        return redirect('film/' . $request->imdb_id);
+    public function like_film(Request $request) {
+        DB::insert('insert into favorites (id_user, id_media) values (?, ?)', [Auth::user()->id, $request->imdb_id]);
     }
 }

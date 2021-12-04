@@ -9,7 +9,7 @@
         </div>
         <div class="row" style="padding-bottom: 2%;">
             <div class="col-md-3">
-                <img class="img-rounded" src="{{ $image }}" alt="Affiche" width="90%">';
+                <img class="img-rounded" src="{{ $image }}" alt="Affiche" width="90%">
             </div>
             <div class="col-md-6">
                 <div class="row">
@@ -63,19 +63,29 @@
         </div>
         <div class="row">
             <div class="col-md-2">
-                <a href="#">
-                    <button type="submit" style="width: 100%;">
+                <a>
+                    <?php
+                    $result_read = DB::select('select 1 from favorites where id_user = ? and id_media = ?', [Auth::user()->id, $imdb_id]);
+                    // dd($result_read);
+                    ?>
+                    @if ($result_read == NULL)
+                    <button onclick="film_like('{{$imdb_id}}')" type="submit" style="width: 100%;">
                         Like
                     </button>
+                    @else
+                    <button type="submit" style="width: 100%;">
+                        Liked
+                    </button>
+                    @endif
                 </a>
             </div>
-            <div class="col-md-2">
+            <!-- <div class="col-md-2">
                 <a href="#">
                     <button type="submit" style="width: 100%;">
                         Add to list
                     </button>
                 </a>
-            </div>
+            </div> -->
         </div>
         <hr style="padding-bottom: 1%;">
         <div class="row">
@@ -90,6 +100,7 @@
                         </label>
                         <input type="text" name="imdb_id" value="{{$imdb_id}}" style="visibility: hidden;">
                         <input type="text" name="id_user" value="{{Auth::user()->id}}" style="visibility: hidden;">
+                        <input type="text" name="name_user" value="{{Auth::user()->name}}" style="visibility: hidden;">
                         <textarea class="form-control" rows="5" name="createcomment"></textarea>
                         <button type="submit" style="margin-top: 2%;">
                             confirmer
@@ -101,7 +112,7 @@
         <!-- Comment List -->
         @for ($i = 0; $i < $num_commentary; $i++)
                 <div class="row" style="margin-top: 5%;">
-                    <h2>{{$commentary_read[$i]->id_user}}</h2>
+                    <h2>{{$commentary_read[$i]->author}}</h2>
                     <p>{{$commentary_read[$i]->content}}</p>
                     <button style="margin-top: 1%; margin-right: 1%" class="modify" onclick="modifyjs({{$commentary_read[$i]->id}})">Update Comment</button>
                     <button type="submit" style="margin-top: 1%;" onclick="delete_comment({{$commentary_read[$i]->id}}, '{{$imdb_id}}')">Remove Comment</button>

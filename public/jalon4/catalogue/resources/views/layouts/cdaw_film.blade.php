@@ -44,6 +44,11 @@
                         <li>
                             <a href="{{ route('user') }}">Mon espace</a>
                         </li>
+                        @if(Auth::user()->authority == 'admin')
+                        <li>
+                            <a href="{{ route('admin_dashboard') }}">Admin dashboard</a>
+                        </li>
+                        @endif
                         @endauth
                         @endif
                     </ul>
