@@ -111,12 +111,14 @@
         </div>
         <!-- Comment List -->
         @for ($i = 0; $i < $num_commentary; $i++)
+            @if($commentary_read[$i]->visibility == 'true')
                 <div class="row" style="margin-top: 5%;">
                     <h2>{{$commentary_read[$i]->author}}</h2>
                     <p>{{$commentary_read[$i]->content}}</p>
                     <button style="margin-top: 1%; margin-right: 1%" class="modify" onclick="modifyjs({{$commentary_read[$i]->id}})">Update Comment</button>
                     <button type="submit" style="margin-top: 1%;" onclick="delete_comment({{$commentary_read[$i]->id}}, '{{$imdb_id}}')">Remove Comment</button>
                 </div>
+            @endif
         @endfor
         <div class="row">
             <div class="col-md-6">

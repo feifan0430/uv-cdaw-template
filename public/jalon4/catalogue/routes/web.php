@@ -90,3 +90,5 @@ Route::get('/admin_dashboard', function () {
 })->name('admin_dashboard');
 Route::post('admin_dashboard/ban_user', 'PageAdminController@ban_user');
 Route::post('admin_dashboard/unblock_user', 'PageAdminController@unblock_user');
+Route::post('admin_dashboard/hide_comment', 'PageAdminController@hide_comment');
+Route::post('admin_dashboard/redisplay_comment', 'PageAdminController@redisplay_comment');

@@ -71,7 +71,7 @@
                 </caption>
                 <tr>
                     <th>id_user</th>
-                    <th>name</th>
+                    <th>name_user</th>
                     <th>id_media</th>
                     <th>content</th>
                     <th>operation</th>
@@ -79,10 +79,10 @@
                 @for($i = 0; $i < $num_comment; $i++)
                 <tr>
                     <td>
-                        {{$read_user[$i]->id}}
+                        {{$read_comment[$i]->id_user}}
                     </td>
                     <td>
-                        {{$read_user[$i]->name}}
+                        {{$read_comment[$i]->author}}
                     </td>
                     <td>
                         {{$read_comment[$i]->id_media}}
@@ -91,10 +91,14 @@
                         {{$read_comment[$i]->content}}
                     </td>
                     <td>
-                        @if($read_comment[$i]->visibility != 'false')
-                            <button class="btn rounded" onclick="" style="text-align:center; width:100%;">
-                                hide
-                            </button>
+                        @if($read_comment[$i]->visibility == 'true')
+                        <button class="btn rounded" onclick="hide_comment('{{$read_comment[$i]->id}}')" style="text-align:center; width:100%;">
+                            hide
+                        </button>
+                        @else
+                        <button class="btn rounded" onclick="redisplay_comment('{{$read_comment[$i]->id}}')" style="text-align:center; width:100%;">
+                            redisplay
+                        </button>
                         @endif
                     </td>
                 </tr>
@@ -136,6 +140,46 @@
                 success: function(msg){
                     console.log(msg);
                     console.log('Success unblocked.');
+                    location.reload();
+                },
+                error:function(resultat, statut, erreur){
+                    console.log(erreur);
+                    // e.preventDefault();
+                }
+            });
+        }
+
+        function hide_comment(comment_id) {
+            console.log(comment_id);
+            $.ajax({
+                type: "POST",
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                url: "admin_dashboard/hide_comment",
+                data: {comment_id:comment_id},
+                //dataType: "json",
+                success: function(msg){
+                    console.log(msg);
+                    console.log('Success hided.');
+                    location.reload();
+                },
+                error:function(resultat, statut, erreur){
+                    console.log(erreur);
+                    // e.preventDefault();
+                }
+            });
+        }
+
+        function redisplay_comment(comment_id) {
+            console.log(comment_id);
+            $.ajax({
+                type: "POST",
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                url: "admin_dashboard/redisplay_comment",
+                data: {comment_id:comment_id},
+                //dataType: "json",
+                success: function(msg){
+                    console.log(msg);
+                    console.log('Success redisplayed.');
                     location.reload();
                 },
                 error:function(resultat, statut, erreur){
