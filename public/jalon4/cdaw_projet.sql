@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- 主机： mysql
--- 生成日期： 2021-12-06 02:17:28
--- 服务器版本： 8.0.27
--- PHP 版本： 7.4.20
+-- Hôte : mysql
+-- Généré le : lun. 06 déc. 2021 à 02:44
+-- Version du serveur : 8.0.27
+-- Version de PHP : 7.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `cdaw_projet`
+-- Base de données : `cdaw_projet`
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `comments`
+-- Structure de la table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -39,7 +39,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 转存表中的数据 `comments`
+-- Déchargement des données de la table `comments`
 --
 
 INSERT INTO `comments` (`id`, `created_at`, `updated_at`, `id_user`, `id_media`, `visibility`, `content`, `author`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `comments` (`id`, `created_at`, `updated_at`, `id_user`, `id_media`,
 -- --------------------------------------------------------
 
 --
--- 表的结构 `failed_jobs`
+-- Structure de la table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -68,7 +68,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `favorites`
+-- Structure de la table `favorites`
 --
 
 CREATE TABLE `favorites` (
@@ -80,7 +80,7 @@ CREATE TABLE `favorites` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 转存表中的数据 `favorites`
+-- Déchargement des données de la table `favorites`
 --
 
 INSERT INTO `favorites` (`id`, `created_at`, `updated_at`, `id_user`, `id_media`) VALUES
@@ -94,7 +94,7 @@ INSERT INTO `favorites` (`id`, `created_at`, `updated_at`, `id_user`, `id_media`
 -- --------------------------------------------------------
 
 --
--- 表的结构 `medias`
+-- Structure de la table `medias`
 --
 
 CREATE TABLE `medias` (
@@ -118,7 +118,7 @@ CREATE TABLE `medias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 转存表中的数据 `medias`
+-- Déchargement des données de la table `medias`
 --
 
 INSERT INTO `medias` (`id`, `created_at`, `updated_at`, `imdb_id`, `imdb_rank`, `title`, `year`, `image`, `imdb_rating`, `type`, `duration`, `director`, `writer`, `stars`, `country`, `introduction`, `is_showed`) VALUES
@@ -881,7 +881,7 @@ INSERT INTO `medias` (`id`, `created_at`, `updated_at`, `imdb_id`, `imdb_rank`, 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `medias_playlists_merge`
+-- Structure de la table `medias_playlists_merge`
 --
 
 CREATE TABLE `medias_playlists_merge` (
@@ -895,7 +895,7 @@ CREATE TABLE `medias_playlists_merge` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `migrations`
+-- Structure de la table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -905,7 +905,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 转存表中的数据 `migrations`
+-- Déchargement des données de la table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -926,7 +926,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `password_resets`
+-- Structure de la table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -938,7 +938,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `personal_access_tokens`
+-- Structure de la table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -956,7 +956,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `playlists`
+-- Structure de la table `playlists`
 --
 
 CREATE TABLE `playlists` (
@@ -971,7 +971,7 @@ CREATE TABLE `playlists` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `sessions`
+-- Structure de la table `sessions`
 --
 
 CREATE TABLE `sessions` (
@@ -984,16 +984,17 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 转存表中的数据 `sessions`
+-- Déchargement des données de la table `sessions`
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('fxVBtqjP70uGdLbZdywq4auwodP9Wc5hxucma3e5', 3, '172.18.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiaHRwV293WFphUTNHMmFRMHhoelMwaFZHRloxSEdxZFY4cWFsQzhSciI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4Mi9qYWxvbjQvY2F0YWxvZ3VlL3B1YmxpYy9pbmRleC5waHAvYWRtaW5fZGFzaGJvYXJkIjt9czozOiJ1cmwiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjM7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCQuWE5vQmc1US9hdGFndElHSjA4RUt1NEltR3VsVEpkY2VEVVhSRmxmRy9aSWFja3YyWHpMcSI7fQ==', 1638748923);
+('fxVBtqjP70uGdLbZdywq4auwodP9Wc5hxucma3e5', 3, '172.18.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiaHRwV293WFphUTNHMmFRMHhoelMwaFZHRloxSEdxZFY4cWFsQzhSciI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4Mi9qYWxvbjQvY2F0YWxvZ3VlL3B1YmxpYy9pbmRleC5waHAvYWRtaW5fZGFzaGJvYXJkIjt9czozOiJ1cmwiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjM7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCQuWE5vQmc1US9hdGFndElHSjA4RUt1NEltR3VsVEpkY2VEVVhSRmxmRy9aSWFja3YyWHpMcSI7fQ==', 1638748923),
+('X4g3H1Qc62GwubUiomN1NSu5UUmo0G7G6MERPj4E', NULL, '172.18.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSnFFMTBPdWRGWlNwWElBenZ3djRkSW9BcExXTE5PbDY0OTc2TlJUMiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4Mi9qYWxvbjQvY2F0YWxvZ3VlL3B1YmxpYy9pbmRleC5waHAvaW5kZXgiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1638758306);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `subscription`
+-- Structure de la table `subscription`
 --
 
 CREATE TABLE `subscription` (
@@ -1007,7 +1008,7 @@ CREATE TABLE `subscription` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
@@ -1028,7 +1029,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 转存表中的数据 `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`, `avatar`, `authority`) VALUES
@@ -1039,7 +1040,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 -- --------------------------------------------------------
 
 --
--- 表的结构 `users_playlists_merge`
+-- Structure de la table `users_playlists_merge`
 --
 
 CREATE TABLE `users_playlists_merge` (
@@ -1051,54 +1052,54 @@ CREATE TABLE `users_playlists_merge` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 转储表的索引
+-- Index pour les tables déchargées
 --
 
 --
--- 表的索引 `comments`
+-- Index pour la table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `failed_jobs`
+-- Index pour la table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- 表的索引 `favorites`
+-- Index pour la table `favorites`
 --
 ALTER TABLE `favorites`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `medias`
+-- Index pour la table `medias`
 --
 ALTER TABLE `medias`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `medias_playlists_merge`
+-- Index pour la table `medias_playlists_merge`
 --
 ALTER TABLE `medias_playlists_merge`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `migrations`
+-- Index pour la table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `password_resets`
+-- Index pour la table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- 表的索引 `personal_access_tokens`
+-- Index pour la table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -1106,13 +1107,13 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- 表的索引 `playlists`
+-- Index pour la table `playlists`
 --
 ALTER TABLE `playlists`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `sessions`
+-- Index pour la table `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
@@ -1120,90 +1121,90 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
--- 表的索引 `subscription`
+-- Index pour la table `subscription`
 --
 ALTER TABLE `subscription`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- 表的索引 `users_playlists_merge`
+-- Index pour la table `users_playlists_merge`
 --
 ALTER TABLE `users_playlists_merge`
   ADD PRIMARY KEY (`id`);
 
 --
--- 在导出的表使用AUTO_INCREMENT
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- 使用表AUTO_INCREMENT `comments`
+-- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- 使用表AUTO_INCREMENT `failed_jobs`
+-- AUTO_INCREMENT pour la table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `favorites`
+-- AUTO_INCREMENT pour la table `favorites`
 --
 ALTER TABLE `favorites`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- 使用表AUTO_INCREMENT `medias`
+-- AUTO_INCREMENT pour la table `medias`
 --
 ALTER TABLE `medias`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=751;
 
 --
--- 使用表AUTO_INCREMENT `medias_playlists_merge`
+-- AUTO_INCREMENT pour la table `medias_playlists_merge`
 --
 ALTER TABLE `medias_playlists_merge`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `migrations`
+-- AUTO_INCREMENT pour la table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- 使用表AUTO_INCREMENT `personal_access_tokens`
+-- AUTO_INCREMENT pour la table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `playlists`
+-- AUTO_INCREMENT pour la table `playlists`
 --
 ALTER TABLE `playlists`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `subscription`
+-- AUTO_INCREMENT pour la table `subscription`
 --
 ALTER TABLE `subscription`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- 使用表AUTO_INCREMENT `users_playlists_merge`
+-- AUTO_INCREMENT pour la table `users_playlists_merge`
 --
 ALTER TABLE `users_playlists_merge`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
