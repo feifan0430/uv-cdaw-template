@@ -39,8 +39,8 @@ php artisan storage:link
 ## Identifiants sur le site<br>
 * utilisateur 1 : feifan0430@outlook.com
  / abcd1234<br>
-* utilisateur 1 : test1@feifan.com / abcd1234<br>
-* utilisateur 1 : admin@feifan.com / abcd1234<br>
+* utilisateur 2 : test1@feifan.com / abcd1234<br>
+* admin : admin@feifan.com / abcd1234<br>
 ## Vidéo de démonstration<br>
 * https://youtu.be/9LKFUqh1Tvo<br>
 * J'ai essayé d'accélérer les fragments en attendant que le navigateur réponde, mais en raison d'une défaillance logicielle, je suis vraiment désolé de ne pouvoir télécharger que la vidéo d'origine. Vous pouvez ignorer l'attente des fragments correspondants dans le navigateur lorsque vous regardez, merci beaucoup.<br>
