@@ -14,6 +14,24 @@
 * Sur la page de l'espace personnel, les utilisateurs peuvent voir leur avatar et leurs films préférés. <br>
 * Une fois connecté, l'utilisateur peut accéder à ses informations personnelles et à la page de son avatar via le menu déroulant situé à droite de la navigation, où il peut modifier son avatar, son nom d'utilisateur, son adresse e-mail et son mot de passe. Vous pouvez également vous déconnecter du site à la fin de votre visite et vous serez automatiquement redirigé vers la page initiale après la déconnexion.<br>
 * La connexion avec un compte d'administrateur donne accès à la page du panneau de contrôle réservée à l'administrateur, où celui-ci peut voir la liste des utilisateurs enregistrés du site et la liste des commentaires des utilisateurs. L'administrateur peut empêcher les utilisateurs de se connecter ou les autoriser à le faire. Les utilisateurs auxquels l'administrateur a interdit de se connecter se verront refuser l'accès au site par le serveur et pourront se connecter à nouveau lorsque l'administrateur les aura débloqués. L'administrateur peut également agir sur les commentaires des films de tous les utilisateurs. L'administrateur peut masquer tout commentaire, qui n'apparaîtra pas sur la page de détails du film, et l'administrateur peut réafficher les commentaires masqués.<br>
+## Avant de commencer<br>
+* Modifiez la déclaration dans jalon4/catalogue/vendor/laravel/fortify/src/Http/Responses/LogoutResponse.php<br>
+```
+return $request->wantsJson()
+            ? new JsonResponse('', 204)
+            : redirect(Fortify::redirect('logout', '/index'));
+
+
+```
+* Modifiez la déclaration dans jalon4/catalogue/vendor/nunomaduro/collision/tests/LaravelApp/config/filesystems.php<br>
+```
+'default' => env('FILESYSTEM_DRIVER', 'public'),
+```
+* Puis exécutez dans le terminal jalon4/catalogue<br>
+```
+php artisan storage:link
+```
+* Afin de rendre public l'avatar du répertoire de stockage enregistré<br>
 ## Méthode pour initialiser la base de données<br>
 * par ficher sql (jalon4/cdaw_projet.sql)<br>
 ## Route<br>
